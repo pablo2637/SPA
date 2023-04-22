@@ -1,0 +1,7 @@
+.secProducts {
+
+    @include grid(1fr 1fr 1fr, space-evenly, start, 10, 15);
+    margin: pixels-rem(20) auto;
+
+    @include cards();
+}

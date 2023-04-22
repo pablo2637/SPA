@@ -28,11 +28,18 @@ export const ProductPages = () => {
 
 
     return (
-        <section>
-            {products.map(product =>
-                <Card key={product.id} {...product} />
-            )}
-        </section>
+        <>
+            <h2>{category}</h2>
+
+            <section className="secProducts">
+
+                {products.map(product =>
+                    <Card key={product.id} {...product} />
+                )}
+
+            </section>
+
+        </>
     )
 
 }

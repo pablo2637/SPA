@@ -6,46 +6,61 @@ import { Categories } from './Categories';
 
 export const NavBar = () => {
 
-    const { user, setUser } = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     return (
         <nav>
 
             {(user.id) ?
 
-                <>
-                    <p>Productos</p>
+                <div className='divNavContainerUser'>
 
-                    <Categories />
+                    <div>
+                        <p>Productos</p>
 
-                    <NavLink to='/search'
-                        className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
-                    >Buscar
-                    </NavLink>
+                        <Categories />
 
-                    <NavLink to='/logout'
-                        className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
-                    >Logout
-                    </NavLink>
+                        <NavLink to='/search'
+                            className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
+                        >Buscar
+                        </NavLink>
+                    </div>
 
-                </> : <>
+                    <div>
+                        <p>Hola, {user.name}!</p>
+                        <NavLink to='/logout'
+                            className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
+                        >Logout
+                        </NavLink>
+                    </div>
 
-                    <p>Home</p>
-                    <NavLink to='/'
-                        className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
-                    >Home
-                    </NavLink>
+                </div>
 
-                    <NavLink to='/login'
-                        className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
-                    >Login
-                    </NavLink>
+                :
 
-                    <NavLink to='/register'
-                        className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
-                    >Registrarse
-                    </NavLink>
-                </>
+                <div className='divNavContainer'>
+
+                    <div>
+                        <NavLink to='/'
+                            className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
+                        >Home
+                        </NavLink>
+                    </div>
+
+                    <div>
+
+                        <NavLink to='/login'
+                            className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
+                        >Login
+                        </NavLink>
+
+                        <NavLink to='/register'
+                            className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
+                        >Registrarse
+                        </NavLink>
+                    </div>
+
+                </div>
 
             }
 

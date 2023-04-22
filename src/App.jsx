@@ -6,14 +6,14 @@ import { useUser } from './hooks/useUser';
 
 function App() {
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const { handleLoginUser, handleNewUser, users } = useUser();
 
   return (
     <>
       <header>
-        Práctica SPA
+        <p>Práctica SPA</p>
       </header>
 
       <NavBar />
@@ -32,7 +32,7 @@ function App() {
       </main>
 
       <footer>
-        Footer
+        <p>Footer</p>
       </footer>
     </>
   )

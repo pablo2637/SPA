@@ -1,0 +1,16 @@
+@import '../base/settings';
+
+.secPortada {
+
+    min-height: 70vh;
+    @include flexbox(center,row);
+
+    div {
+        @include container-img-texto($bg-font-col, center, 100, 0);
+
+        h1 {
+            text-shadow: 0 0 15px $bg;
+        }
+    }
+
+}

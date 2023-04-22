@@ -1,0 +1,138 @@
+@mixin flexbox($justify, $direction) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin grid($grd-col, $justify, $align, $padding, $gap) {
+    display: grid;
+    grid-template-columns: $grd-col;
+    justify-content: $justify;
+    align-items: $align;
+    padding: pixels-rem($padding);
+    gap: pixels-rem($gap);
+}
+
+@mixin container($width, $mrg-y) {
+    width: $width;
+    margin: $mrg-y auto;
+}
+
+@mixin border($color, $radius) {
+    border: 1px solid $color;
+    border-radius: pixels-rem($radius);
+}
+
+@mixin boton() {
+    background-color: $bg;
+    border-radius: 5px;
+    border: none;
+    color: $bg-font-col;
+    cursor: pointer;
+}
+
+@mixin imagen() {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin container-img-texto($text-color, $align-text, $font-size, $padding) {
+
+    position: relative;
+
+    img {
+        @include imagen();
+    }
+
+    div {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $text-color;
+
+        h1 {
+            padding: pixels-rem($padding);
+            font-size: pixels-rem($font-size);
+            text-align: $align-text;
+        }
+    }
+}
+
+@mixin cards() {
+
+    article {
+        width: 100%;
+        height: 100%;
+        border: 1px solid $nav-font-col;
+        box-shadow: 0 0 3px $bg;
+
+        h3 {
+            font-size: pixels-rem(12);
+            text-align: center;
+            margin: pixels-rem(10) 0;
+        }
+
+        div:first-of-type {
+            width: 100%;
+            height: pixels-rem(200);
+            margin-bottom: pixels-rem(10);
+            overflow: hidden;
+
+            img {
+                @include imagen();
+                padding: pixels-rem(2);
+                transition: transform 500ms ease-in-out;
+            }
+
+            img:hover {
+                transform: scale(1.3);
+            }
+        }
+
+        p {
+            padding: pixels-rem(2) pixels-rem(10);
+            font-size: pixels-rem(12);
+
+            span {
+                font-weight: bold;
+            }
+
+        }
+
+        p:last-of-type {
+            span {
+                color: $error;
+            }
+        }
+
+        div:last-of-type {
+            text-align: center;
+            margin-bottom: pixels-rem(5);
+
+            button {
+                @include boton();
+                margin-top: pixels-rem(5);
+                width: pixels-rem(100);
+                padding: pixels-rem(2);
+                transition: background-color 250ms ease-in-out;
+
+            }
+
+            button:hover {
+                background-color: $bg-font-col;
+                color: $bg;
+                box-shadow: 0 0 1px $bg;
+            }
+        }
+    }
+
+    article:hover {
+        box-shadow: 0 0 10px 2px $bg;
+    }
+
+}

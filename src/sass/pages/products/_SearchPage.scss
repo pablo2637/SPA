@@ -1,0 +1,65 @@
+.secSearch {
+
+    @include grid(1fr 1fr, center, start, 20, 10);
+    margin: pixels-rem(20) auto;
+
+    section:first-child {
+
+        form {
+            label {
+                color: $font-col;
+            }
+
+            input:first-of-type {
+                @include border($bg-search-font, 5);
+                padding: pixels-rem(8);
+                width: 100%;
+            }
+
+            input[type='submit'] {
+                margin-top: pixels-rem(10);
+                @include boton();
+                padding: pixels-rem(5);
+                width: pixels-rem(120);
+                transition: background-color 250ms ease-in-out;
+
+            }
+
+            input[type='submit']:hover {
+                background-color: $bg-font-col;
+                color: $bg;
+                box-shadow: 0 0 1px $bg;
+            }
+
+            p {
+                margin-top: pixels-rem(5);
+                color: $error;
+                font-size: pixels-rem(12);
+            }
+        }
+    }
+
+    section:last-child {
+
+        div {
+
+            div:first-child {
+                background-color: $bg-search;
+                padding: pixels-rem(10);
+                @include border($bg-search-font, 5);
+
+                p:first-child {
+                    color: $bg-search-font;
+                }
+            }
+
+            @include cards();
+
+            article {
+                @include container(90%, pixels-rem(10));
+            }
+        }
+
+    }
+
+}

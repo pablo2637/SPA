@@ -1,0 +1,17 @@
+@import './base/settings';
+
+main {
+    @include flexbox(center, column);
+    @include container(95%, 0);
+    max-width: 992px;
+    // min-height: 80vh;
+
+    h2 {
+        margin-top: pixels-rem(30);
+        color: $nav-font-col;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid $nav-font-col;
+    }
+
+}

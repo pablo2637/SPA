@@ -9,7 +9,7 @@ const init = () => getLocal();
 export const useUser = () => {
 
 
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
 
     const [users, dispatch] = useReducer(userReducer, [], init)
 
@@ -22,7 +22,7 @@ export const useUser = () => {
             password,
             date: new Date()
         };
-        
+
         setUser(userNew)
 
         const action = {

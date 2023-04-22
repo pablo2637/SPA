@@ -1,0 +1,69 @@
+@import '../base/settings';
+
+nav {
+    background-color: $bg-nav;
+
+    .divNavContainer {
+
+        @include grid(1fr 1fr, center, center, 8, 0);
+
+        div:nth-child(2) {
+            justify-self: right;
+        }
+
+    }
+
+    .divNavContainerUser {
+
+        @include grid(0.7fr 0.3fr, center, center, 8, 0);
+
+        select {
+            @include border($nav-font-col, 6);
+            cursor: pointer;
+            width: pixels-rem(200);
+            font-size: pixels-rem(15);
+            padding: pixels-rem(5);
+            text-indent: pixels-rem(5);
+            color: $nav-font-col;
+            margin-right: pixels-rem(10);
+        }
+
+        select:hover {
+            color: $bg;
+        }
+
+        div:nth-child(2) {
+            justify-self: right;
+
+            a {
+                @include border($nav-font-col, 6);
+            }
+
+            p {
+                font-size: pixels-rem(15);
+            }
+        }
+
+    }
+
+    p {
+        font-size: pixels-rem(25);
+        padding: pixels-rem(2);
+        margin-right: pixels-rem(10);
+        display: inline-block;
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: $nav-font-col;
+        border-radius: pixels-rem(10);
+        padding: pixels-rem(10);
+        transition: background-color 250ms ease-in-out;
+    }
+
+
+    a:hover {
+        background-color: $bg;
+    }
+}

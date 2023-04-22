@@ -2,7 +2,6 @@ import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateFormFind, validateFormLogin, validateFormRegister } from '../helpers/validateForms'
 import { UserContext } from '../contexts/UseContext';
-import { getLocalUser } from '../helpers/localStorage';
 
 
 export const useForm = (initialState) => {
@@ -11,7 +10,7 @@ export const useForm = (initialState) => {
     const [validate, setValidate] = useState({});
     const navigate = useNavigate();
 
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
 
 
     const serializeForm = (serialForm) => {
