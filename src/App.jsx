@@ -1,12 +1,14 @@
 import { useContext } from 'react';
 import { NavBar } from './components/NavBar'
 import { UserContext } from './contexts/UseContext';
-
 import { AppRoutes, UserRoutes } from './routers'
+import { useUser } from './hooks/useUser';
 
 function App() {
 
   const { user, setUser } = useContext(UserContext);
+
+  const { handleLoginUser, handleNewUser, users } = useUser();
 
   return (
     <>
@@ -21,7 +23,11 @@ function App() {
         {(user.id) ?
           <UserRoutes />
           :
-          <AppRoutes />}
+          <AppRoutes
+            handleNewUser={handleNewUser}
+            handleLoginUser={handleLoginUser}
+            users={users}
+          />}
 
       </main>
 

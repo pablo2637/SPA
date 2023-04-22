@@ -8,8 +8,10 @@ const init = () => getLocal();
 
 export const useUser = () => {
 
+
     const { user, setUser } = useContext(UserContext);
-    const [users, dispatch] = useReducer(userReducer, [], init)    
+
+    const [users, dispatch] = useReducer(userReducer, [], init)
 
     const handleNewUser = ({ name, email, password }) => {
 
@@ -20,6 +22,8 @@ export const useUser = () => {
             password,
             date: new Date()
         };
+        
+        setUser(userNew)
 
         const action = {
             type: '[USER] add user',

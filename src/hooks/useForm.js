@@ -43,7 +43,7 @@ export const useForm = (initialState) => {
             ev.target.password.value = ''
             if (!validateOk) return
 
-            const loginOK = handleLoginUser(data);
+            const loginOK = handleLoginUser(data, setUser);
             if (!loginOK) {
                 setValidate({ email: 'El usuario y la  contraseña no coincide' });
                 return;
@@ -65,9 +65,8 @@ export const useForm = (initialState) => {
             validateOk = validateFormRegister(data, setValidate, users);
             if (!validateOk) return
 
-            handleNewUser(data);
+            handleNewUser(data, setUser);
 
-            setUser(getLocalUser())
             navigate('/home');
         }
 

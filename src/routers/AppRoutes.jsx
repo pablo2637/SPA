@@ -1,10 +1,8 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { HomePage, LoginPage, RegisterPage } from '../pages';
-import { useUser } from '../hooks/useUser';
 
-export const AppRoutes = () => {
+export const AppRoutes = ({ handleLoginUser, handleNewUser, users }) => {
 
-    const { handleLoginUser, handleNewUser, users } = useUser();
 
     return (
 
