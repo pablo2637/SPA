@@ -49,6 +49,8 @@ export const NavBar = () => {
 
                     <div>
 
+                        <Categories />
+
                         <NavLink to='/login'
                             className={({ isActive }) => `nav-link ${isActive ? 'isActive' : ''}`}
                         >Login

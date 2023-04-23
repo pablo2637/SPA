@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <UseProvider>
 
-        <App />
+          <App />
 
       </UseProvider>
 

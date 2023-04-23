@@ -38,6 +38,12 @@
     object-fit: cover;
 }
 
+@mixin boton-hover() {
+    background-color: $bg-font-col;
+    color: $bg;
+    box-shadow: 0 0 1px $bg;
+}
+
 @mixin container-img-texto($text-color, $align-text, $font-size, $padding) {
 
     position: relative;
@@ -118,15 +124,13 @@
                 @include boton();
                 margin-top: pixels-rem(5);
                 width: pixels-rem(100);
-                padding: pixels-rem(2);
+                padding: pixels-rem(8);
                 transition: background-color 250ms ease-in-out;
 
             }
 
             button:hover {
-                background-color: $bg-font-col;
-                color: $bg;
-                box-shadow: 0 0 1px $bg;
+                @include boton-hover();
             }
         }
     }

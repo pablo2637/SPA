@@ -25,7 +25,7 @@ export const fetchDataCategory = async (category) => {
 };
 
 
-export const fetchCategories = async () => {
+export const fetchCategories = async () => {    
 
     const data = {
         type: 'categories'

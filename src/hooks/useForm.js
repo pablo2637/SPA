@@ -2,14 +2,14 @@ import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateFormFind, validateFormLogin, validateFormRegister } from '../helpers/validateForms'
 import { UserContext } from '../contexts/UseContext';
-
+import { UseContextCats } from '../contexts/UseContextCats';
 
 export const useForm = (initialState) => {
 
     const [form, setForm] = useState(initialState);
     const [validate, setValidate] = useState({});
     const navigate = useNavigate();
-
+    const { cats } = useContext(UseContextCats);
     const { setUser } = useContext(UserContext);
 
 
@@ -47,9 +47,8 @@ export const useForm = (initialState) => {
                 setValidate({ email: 'El usuario y la  contraseña no coincide' });
                 return;
             }
-
-            navigate('home');
-
+            console.log('cats', cats)
+            navigate(`products/${cats[0]}`);
 
         } else if (formType == 'find') {
 
@@ -66,7 +65,7 @@ export const useForm = (initialState) => {
 
             handleNewUser(data, setUser);
 
-            navigate('/home');
+            navigate(`products/${cats[0]}`);
         }
 
     };

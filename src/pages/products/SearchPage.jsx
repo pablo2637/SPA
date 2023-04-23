@@ -30,6 +30,7 @@ export const SearchPage = () => {
 
         <section>
 
+          <h3>Resultados:</h3>
           {(products.length > 0) ?
 
             <div>

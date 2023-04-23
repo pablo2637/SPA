@@ -5,3 +5,8 @@
 .mostrar {
     display: inherit;
 }
+
+.isActive {
+    color: $error;
+    @include border($error, 5);
+}

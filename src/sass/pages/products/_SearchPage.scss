@@ -1,6 +1,6 @@
 .secSearch {
 
-    @include grid(1fr 1fr, center, start, 20, 10);
+    @include grid(1fr 1fr, center, start, 20, 20);
     margin: pixels-rem(20) auto;
 
     section:first-child {
@@ -16,6 +16,11 @@
                 width: 100%;
             }
 
+            input:first-of-type:hover {
+                background-color: $input-bg;            
+                border-color: $bg;
+            }
+
             input[type='submit'] {
                 margin-top: pixels-rem(10);
                 @include boton();
@@ -26,9 +31,7 @@
             }
 
             input[type='submit']:hover {
-                background-color: $bg-font-col;
-                color: $bg;
-                box-shadow: 0 0 1px $bg;
+                @include boton-hover();
             }
 
             p {
@@ -41,12 +44,17 @@
 
     section:last-child {
 
+        h3 {
+            color: $font-col;
+            margin-bottom: pixels-rem(5);
+        }
+
         div {
 
             div:first-child {
                 background-color: $bg-search;
                 padding: pixels-rem(10);
-                @include border($bg-search-font, 5);
+                @include border($bg-search-border, 5);
 
                 p:first-child {
                     color: $bg-search-font;

@@ -18,11 +18,11 @@ nav {
         @include grid(0.7fr 0.3fr, center, center, 8, 0);
 
         select {
-            @include border($nav-font-col, 6);
+            @include border($nav-font-col, 5);
             cursor: pointer;
             width: pixels-rem(200);
             font-size: pixels-rem(15);
-            padding: pixels-rem(5);
+            padding: pixels-rem(10);
             text-indent: pixels-rem(5);
             color: $nav-font-col;
             margin-right: pixels-rem(10);
@@ -37,6 +37,7 @@ nav {
 
             a {
                 @include border($nav-font-col, 6);
+                box-shadow: 0 0 2px $bg;
             }
 
             p {

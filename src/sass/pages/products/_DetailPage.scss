@@ -11,9 +11,7 @@
     }
 
     button:hover {
-        background-color: $bg-font-col;
-        color: $bg;
-        box-shadow: 0 0 1px $bg;
+        @include boton-hover();
     }
 
 
