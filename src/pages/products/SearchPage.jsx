@@ -1,13 +1,13 @@
-import { Find } from "./components/Find"
+import { Find } from "./components/Find";
 import { useState } from "react";
-import { fetchDataSearch } from '../../helpers/fetchData'
+import { fetchDataSearch } from '../../helpers/fetchData';
 import { Card } from "./components/Card";
 
 export const SearchPage = () => {
 
   const [products, setProducts] = useState([]);
 
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState('');
 
   const getText = async (findText) => {
 
@@ -19,40 +19,56 @@ export const SearchPage = () => {
 
 
   return (
-    <div>
 
-      <Find getText={getText} />
+    <>
 
-      <section>
-        {(products.length > 0) ?
+      <h2>Buscador</h2>
 
-          <>
-            {(products.length == 1) ?
-              <h3>Se ha encontrado 1 artículo...</h3>
-              :
-              <h3>Se han encontrado {products.length} artículos...</h3>
-            }
+      <section className="secSearch">
 
-            {products.map(product =>
-              <Card key={product.id} {...product} />
-            )}
-          </>
+        <Find getText={getText} />
 
-          :
-          
-          <>
-            {
-              (searchText != '') ?
-                <h3>No hay resultados para tu búsqueda...</h3>
-                :
-                <h3>Aún no has buscado nada...</h3>
-            }
-          </>
+        <section>
 
-        }
+          <h3>Resultados:</h3>
+          {(products.length > 0) ?
+
+            <div>
+              <div>
+                {(products.length == 1) ?
+                  <p>Se ha encontrado 1 artículo...</p>
+                  :
+                  <p>Se han encontrado {products.length} artículos...</p>
+                }
+              </div>
+
+              <div>
+                {products.map(product =>
+                  <Card key={product.id} {...product} />
+                )}
+              </div>
+            </div>
+
+            :
+
+            <div>
+              <div>
+                {
+                  (searchText != '') ?
+                    <p>No hay resultados para tu búsqueda...</p>
+                    :
+                    <p>Aún no has buscado nada...</p>
+                }
+              </div>
+            </div>
+
+          }
+
+        </section>
+
       </section>
 
-    </div>
-  )
+    </>
+  );
 
 };

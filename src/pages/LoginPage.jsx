@@ -1,4 +1,4 @@
-import { useForm } from "../hooks/useForm"
+import { useForm } from "../hooks/useForm";
 
 export const LoginPage = ({ handleLoginUser, users }) => {
 
@@ -8,13 +8,11 @@ export const LoginPage = ({ handleLoginUser, users }) => {
     validate } = useForm();
 
   return (
-    <section>
+    <section className="secLogin">
 
-      <h2>
-        Login para Comenzar
-      </h2>
+      <h2>Loguéate para entrar...</h2>
 
-      <form id="formLogin" onSubmit={(ev) => handlerSubmit(ev, 'login', users, null, handleLoginUser)}>
+      <form onSubmit={(ev) => handlerSubmit(ev, 'login', users, null, handleLoginUser)}>
 
         <label htmlFor="email">Email:</label>
         <input
@@ -46,5 +44,6 @@ export const LoginPage = ({ handleLoginUser, users }) => {
       </form>
 
     </section >
-  )
-}
+    
+  );
+};

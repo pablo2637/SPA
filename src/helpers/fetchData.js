@@ -1,5 +1,6 @@
 import { dummyJson } from "../apis/dummyJson";
 
+
 export const fetchDataCategory = async (category) => {
 
     const data = {
@@ -20,10 +21,10 @@ export const fetchDataCategory = async (category) => {
     }));
 
     return productsCat;
-
 };
 
-export const fetchCategories = async () => {
+
+export const fetchCategories = async () => {    
 
     const data = {
         type: 'categories'
@@ -32,7 +33,6 @@ export const fetchCategories = async () => {
     const categories = await dummyJson(data);
 
     return categories;
-
 };
 
 
@@ -41,7 +41,7 @@ export const fetchDataSearch = async (search) => {
     const data = {
         type: 'search',
         search
-    }
+    };
 
     const { products } = await dummyJson(data);
 
@@ -57,7 +57,6 @@ export const fetchDataSearch = async (search) => {
     }));
 
     return productsCat;
-
 };
 
 
@@ -66,7 +65,7 @@ export const fetchDataByID = async (id) => {
     const data = {
         type: 'id',
         id
-    }
+    };
 
     const prod = await dummyJson(data);
 
@@ -82,5 +81,4 @@ export const fetchDataByID = async (id) => {
     };
 
     return product;
-
 };

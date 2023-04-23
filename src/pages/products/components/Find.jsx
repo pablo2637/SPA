@@ -1,4 +1,4 @@
-import { useForm } from '../../../hooks/useForm'
+import { useForm } from '../../../hooks/useForm';
 
 export const Find = ({ getText }) => {
 
@@ -9,9 +9,8 @@ export const Find = ({ getText }) => {
 
     return (
         <section>
-            <h2>Buscador</h2>
 
-            <form onSubmit={(ev) => handlerSubmit(ev, 'find', null, null, getText)}>
+            <form onSubmit={(ev) => handlerSubmit(ev, 'find', null, null, null, getText)}>
                 <label
                     htmlFor="findText"
                 >Escribe lo que quieres buscar:
@@ -21,7 +20,7 @@ export const Find = ({ getText }) => {
                     type="text"
                     name="findText"
                     id="findText"
-                    placeholder="texto"
+                    placeholder="Buscar"
                     autoFocus
                     onChange={handlerChange}
                 />
@@ -38,5 +37,5 @@ export const Find = ({ getText }) => {
             </form>
 
         </section>
-    )
-}
+    );
+};

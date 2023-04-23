@@ -1,41 +1,54 @@
-import { useEffect, useState } from "react";
-import { fetchCategories } from '../helpers/fetchData'
+import { useContext, useEffect } from "react";
+import { fetchCategories } from '../helpers/fetchData';
 import { useNavigate } from 'react-router-dom';
+import { UseContextCats } from '../contexts/UseContextCats';
+import { UserContext } from "../contexts/UseContext";
+
 
 export const Categories = () => {
 
-    const [categories, setCategories] = useState([])
+    const { user } = useContext(UserContext);
     const navigate = useNavigate();
 
+    const { cats, setCats } = useContext(UseContextCats);
 
     const getCategories = async () => {
 
         const data = await fetchCategories();
-        setCategories(data);
-    }
+        setCats(data);
+    };
 
 
     const handlerChange = ({ target }) => {
+
         navigate(`products/${target.value}`);
-    }
+    };
 
 
     useEffect(() => {
-        getCategories();
+        if (cats.length == 0) getCategories();
+
     }, []);
 
     return (
-        <select name="categories" id="categories" onChange={handlerChange}>
-            
-            {
-                (categories.length > 0) ?
-                    categories.map(cat =>
-                        <option key={cat} value={cat}>{cat}</option>
-                    )
-                    :
-                    <option value="">No hay categorías</option>
-            }
+        <>
+            {(user.id) &&
 
-        </select>
-    )
-}
+                < select name="categories" id="categories" onChange={handlerChange} >
+
+                    {
+                        (cats.length > 0) ?
+                            cats.map(cat =>
+                                <option key={cat} value={cat}>{cat}</option>
+                            )
+                            :
+                            <option value="">No hay categorías</option>
+
+                    }
+
+                </select >
+
+            }
+        </>
+    );
+};

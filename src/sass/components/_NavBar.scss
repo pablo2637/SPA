@@ -1,0 +1,165 @@
+@import '../base/settings';
+
+nav {
+    background-color: $bg-nav;
+
+    .divNavContainer {
+
+        @include grid(1fr 1fr, center, center, 8, 0);
+
+        div:nth-child(2) {
+            justify-self: right;
+        }
+    }
+
+    .divNavContainerUser {
+
+        @include grid(0.65fr 0.35fr, center, center, 8, 0);
+
+        select {
+            @include border($nav-font-col, 5);
+            cursor: pointer;
+            width: pixels-rem(90);
+            font-size: pixels-rem(10);
+            padding: pixels-rem(5);
+            text-indent: pixels-rem(3);
+            color: $nav-font-col;
+            margin-right: pixels-rem(5);
+        }
+
+        select:hover {
+            color: $bg;
+        }
+
+        div:nth-child(1) {
+            @include flexbox(left, row);
+        }
+
+        div:nth-child(2) {
+            justify-self: right;
+
+            a {
+                @include border($nav-font-col, 6);
+                box-shadow: 0 0 2px $bg;
+            }
+
+            p {
+                font-size: pixels-rem(11);
+            }
+        }
+
+    }
+
+    p {
+        font-size: pixels-rem(14);
+        padding: pixels-rem(2);
+        margin-right: pixels-rem(5);
+        display: inline-block;
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: $nav-font-col;
+        border-radius: pixels-rem(10);
+        padding: pixels-rem(5);
+        transition: background-color 250ms ease-in-out;
+    }
+
+    a:hover {
+        background-color: $bg;
+    }
+}
+
+
+@media screen and ($bp-mobile-plus) {
+
+    nav {
+        .divNavContainerUser {
+            select {
+                width: pixels-rem(110);
+            }
+        }
+    }
+}
+
+@media screen and ($bp-mobile-plus) {
+
+    nav {
+        .divNavContainerUser {
+            @include grid(0.7fr 0.3fr, center, center, 8, 0);
+
+            div:nth-child(2) {
+                p {
+                    font-size: pixels-rem(12);
+                }
+            }
+        }
+
+        p {
+            font-size: pixels-rem(18);
+        }
+    }
+}
+
+
+@media screen and ($bp-mobile-landscape) {
+
+    nav {
+        .divNavContainerUser {
+            @include grid(0.7fr 0.3fr, center, center, 8, 0);
+
+            select {
+                width: pixels-rem(150);
+                font-size: pixels-rem(12);
+                padding: pixels-rem(8);
+                text-indent: pixels-rem(5);
+                margin-right: pixels-rem(10);
+            }
+
+            div:nth-child(2) {
+                p {
+                    font-size: pixels-rem(15);
+                }
+            }
+        }
+
+        p {
+            font-size: pixels-rem(23);
+            padding: pixels-rem(8);
+        }
+
+        a {
+            padding: pixels-rem(8);
+        }
+    }
+}
+
+
+@media screen and ($bp-tablet-landscape) {
+
+    nav {
+        .divNavContainerUser {
+            select {
+                width: pixels-rem(200);
+                font-size: pixels-rem(15);
+                padding: pixels-rem(10);
+            }
+
+            div:nth-child(2) {
+                p {
+                    font-size: pixels-rem(15);
+                }
+            }
+        }
+
+        p {
+            font-size: pixels-rem(30);
+            padding: pixels-rem(10);
+        }
+
+        a {
+            padding: pixels-rem(10);
+        }
+    }
+}

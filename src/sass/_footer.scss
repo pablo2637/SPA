@@ -1,0 +1,12 @@
+@import './base/settings';
+
+footer {
+    background-color: $bg;
+    padding: pixels-rem(15);
+    text-align: center;
+
+    p {
+        font-size: pixels-rem(15);
+        color: $bg-font-col;
+    }
+}

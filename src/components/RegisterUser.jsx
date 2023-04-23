@@ -8,10 +8,13 @@ export const RegisterUser = ({ handleNewUser, users }) => {
         validate } = useForm('');
 
     return (
-        <section>
+
+        <>
+            <h2>Completa el registro...</h2>
 
             <form onSubmit={(ev) => handlerSubmit(ev, 'register', users, handleNewUser)}>
 
+                <label htmlFor="name">Nombre:</label>
                 <input
                     type="text"
                     name="name"
@@ -25,6 +28,7 @@ export const RegisterUser = ({ handleNewUser, users }) => {
                     <p>{validate.name}</p>
                 }
 
+                <label htmlFor="email">Email:</label>
                 <input
                     type="text"
                     name="email"
@@ -37,6 +41,7 @@ export const RegisterUser = ({ handleNewUser, users }) => {
                     <p>{validate.email}</p>
                 }
 
+                <label htmlFor="password">Contraseña:</label>
                 <input
                     type="password"
                     name="password"
@@ -49,6 +54,7 @@ export const RegisterUser = ({ handleNewUser, users }) => {
                     <p>{validate.password}</p>
                 }
 
+                <label htmlFor="passwordR">Repite la contraseña:</label>
                 <input
                     type="password"
                     name="passwordR"
@@ -67,7 +73,6 @@ export const RegisterUser = ({ handleNewUser, users }) => {
                 />
 
             </form>
-
-        </section>
-    )
-}
+        </>
+    );
+};

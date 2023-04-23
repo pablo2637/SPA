@@ -1,12 +1,10 @@
-import { RegisterUser } from "../components/RegisterUser"
+import { RegisterUser } from "../components/RegisterUser";
 
 
 export const RegisterPage = ({ handleNewUser, users }) => {
 
   return (
-    <section>
-
-      <h2>Registro de usuarios</h2>
+    <section className="secRegister">
 
       <RegisterUser
         handleNewUser={handleNewUser}
@@ -14,5 +12,5 @@ export const RegisterPage = ({ handleNewUser, users }) => {
       />
 
     </section>
-  )
-}
+  );
+};

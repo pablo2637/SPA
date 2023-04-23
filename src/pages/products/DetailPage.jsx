@@ -1,7 +1,8 @@
-import { fetchDataByID } from '../../helpers/fetchData'
+import { fetchDataByID } from '../../helpers/fetchData';
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom';
 import { BigCard } from './components/BigCard';
+
 
 export const DetailPage = () => {
 
@@ -15,26 +16,28 @@ export const DetailPage = () => {
 
         const data = await fetchDataByID(id.id);
         setProduct(data);
-    }
+    };
 
 
     useEffect(() => {
+
         getProduct();
+
     }, []);
 
 
     return (
-        <article>
-            <button onClick={() => navigate(-1)} >Atrás</button>
+        <section className='secDetail'>
+
+            <button onClick={() => navigate(-1)} >Volver</button>
+
             {(product.id) ?
                 <BigCard {...product} />
                 :
-                <h3>
-                    Cargando...
-                </h3>
+                <h3>Cargando...</h3>
 
             }
 
-        </article>
-    )
-}
+        </section>
+    );
+};

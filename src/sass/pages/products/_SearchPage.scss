@@ -1,0 +1,114 @@
+@import './components/_Card';
+
+.secSearch {
+
+    @include grid(1fr, center, start, 20, 20);
+    margin: pixels-rem(20) auto;
+    max-width: pixels-rem(500);
+
+    section:first-child {
+
+        form {
+
+            label {
+                display: inline-block;
+                color: $nav-font-col;
+                margin-bottom: pixels-rem(4);
+            }
+
+            input:first-of-type {
+                @include border($bg-search-font, 5);
+                padding: pixels-rem(8);
+                width: 100%;
+            }
+
+            input:first-of-type:hover {
+                background-color: $input-bg;
+                border-color: $bg;
+            }
+
+            input[type='submit'] {
+                margin-top: pixels-rem(10);
+                @include boton();
+                padding: pixels-rem(5);
+                width: pixels-rem(120);
+                transition: background-color 250ms ease-in-out;
+            }
+
+            input[type='submit']:hover {
+                @include boton-hover();
+            }
+
+            p {
+                margin-top: pixels-rem(5);
+                color: $error;
+                font-size: pixels-rem(12);
+            }
+        }
+    }
+
+    section:last-child {
+
+        h3 {
+            color: $font-col;
+            margin-bottom: pixels-rem(5);
+        }
+
+        div {
+
+            div:first-child {
+                background-color: $bg-search;
+                padding: pixels-rem(10);
+                @include border($bg-search-border, 5);
+
+                p:first-child {
+                    color: $bg-search-font;
+                }
+            }
+
+            div:last-child {
+                @include card();
+
+                article {
+                    @include container(90%, pixels-rem(10));
+                }
+            }
+
+
+        }
+    }
+}
+
+
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secSearch {
+        @include grid(0.4fr 0.6fr, center, start, 20, 20);
+        margin: pixels-rem(20) auto;
+        max-width: pixels-rem(750);
+    }
+}
+
+@media screen and ($bp-tablet-landscape) {
+
+    .secSearch {
+        @include grid(0.3fr 0.7fr, center, start, 20, 20);
+        margin: pixels-rem(20) auto;
+        max-width: 100%;
+
+        section:last-child {
+
+            h3 {
+                color: $font-col;
+                margin-bottom: pixels-rem(5);
+            }
+
+            div {
+                div:last-child {
+                    @include grid(1fr 1fr, center, start, 5, 5);
+                }
+            }
+        }
+    }
+}

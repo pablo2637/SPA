@@ -14,25 +14,33 @@ export const ProductPages = () => {
 
     const getProducts = async () => {
 
-        const data = await fetchDataCategory(category);
+        let data = await fetchDataCategory(category);
 
         setProducts(data);
         setLast(category);
-    }
+    };
 
 
     useEffect(() => {
-
+        
         if (last != category) getProducts();
+
     });
 
 
     return (
-        <section>
-            {products.map(product =>
-                <Card key={product.id} {...product} />
-            )}
-        </section>
-    )
+        <>
+            <h2>{category}</h2>
 
-}
+            <section className="secProducts">
+
+                {products.map(product =>
+                    <Card key={product.id} {...product} />
+                )}
+
+            </section>
+
+        </>
+    );
+
+};

@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { UserContext } from "./UseContext"
+import { useState } from "react";
+import { UserContext } from "./UseContext";
 import { getLocalUser } from "../helpers/localStorage";
 
 export const UseProvider = ({ children }) => {
@@ -12,5 +12,5 @@ export const UseProvider = ({ children }) => {
             {children}
 
         </UserContext.Provider>
-    )
-}
+    );
+};

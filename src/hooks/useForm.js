@@ -1,17 +1,16 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { validateFormFind, validateFormLogin, validateFormRegister } from '../helpers/validateForms'
+import { validateFormFind, validateFormLogin, validateFormRegister } from '../helpers/validateForms';
 import { UserContext } from '../contexts/UseContext';
-import { getLocalUser } from '../helpers/localStorage';
-
+import { UseContextCats } from '../contexts/UseContextCats';
 
 export const useForm = (initialState) => {
 
     const [form, setForm] = useState(initialState);
     const [validate, setValidate] = useState({});
     const navigate = useNavigate();
-
-    const { user, setUser } = useContext(UserContext);
+    const { cats } = useContext(UseContextCats);
+    const { setUser } = useContext(UserContext);
 
 
     const serializeForm = (serialForm) => {
@@ -43,14 +42,13 @@ export const useForm = (initialState) => {
             ev.target.password.value = ''
             if (!validateOk) return
 
-            const loginOK = handleLoginUser(data);
+            const loginOK = handleLoginUser(data, setUser);
             if (!loginOK) {
                 setValidate({ email: 'El usuario y la  contraseña no coincide' });
                 return;
             }
-
-            navigate('home');
-
+            console.log('cats', cats)
+            navigate(`products/${cats[0]}`);
 
         } else if (formType == 'find') {
 
@@ -65,10 +63,9 @@ export const useForm = (initialState) => {
             validateOk = validateFormRegister(data, setValidate, users);
             if (!validateOk) return
 
-            handleNewUser(data);
+            handleNewUser(data, setUser);
 
-            setUser(getLocalUser())
-            navigate('/home');
+            navigate(`products/${cats[0]}`);
         }
 
     };
