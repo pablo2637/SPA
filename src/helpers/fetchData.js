@@ -21,7 +21,6 @@ export const fetchDataCategory = async (category) => {
     }));
 
     return productsCat;
-
 };
 
 
@@ -42,7 +41,7 @@ export const fetchDataSearch = async (search) => {
     const data = {
         type: 'search',
         search
-    }
+    };
 
     const { products } = await dummyJson(data);
 
@@ -66,7 +65,7 @@ export const fetchDataByID = async (id) => {
     const data = {
         type: 'id',
         id
-    }
+    };
 
     const prod = await dummyJson(data);
 

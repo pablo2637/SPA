@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import { UserContext } from '../contexts/UseContext';
 import { Categories } from './Categories';
 

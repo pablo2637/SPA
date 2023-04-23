@@ -1,4 +1,4 @@
-import { RegisterUser } from "../components/RegisterUser"
+import { RegisterUser } from "../components/RegisterUser";
 
 
 export const RegisterPage = ({ handleNewUser, users }) => {
@@ -12,5 +12,5 @@ export const RegisterPage = ({ handleNewUser, users }) => {
       />
 
     </section>
-  )
-}
+  );
+};

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { validateFormFind, validateFormLogin, validateFormRegister } from '../helpers/validateForms'
+import { validateFormFind, validateFormLogin, validateFormRegister } from '../helpers/validateForms';
 import { UserContext } from '../contexts/UseContext';
 import { UseContextCats } from '../contexts/UseContextCats';
 

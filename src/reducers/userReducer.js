@@ -4,8 +4,6 @@ import { setLocal, setLocalUser } from "../helpers/localStorage";
 
 export const userReducer = (state = [], action) => {
 
-    console.log('state', state, 'action', action)
-
     let newState;
     switch (action.type) {
 

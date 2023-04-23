@@ -11,7 +11,7 @@ export const useUser = () => {
 
     const { setUser } = useContext(UserContext);
 
-    const [users, dispatch] = useReducer(userReducer, [], init)
+    const [users, dispatch] = useReducer(userReducer, [], init);
 
     const handleNewUser = ({ name, email, password }) => {
 
@@ -23,7 +23,7 @@ export const useUser = () => {
             date: new Date()
         };
 
-        setUser(userNew)
+        setUser(userNew);
 
         const action = {
             type: '[USER] add user',
@@ -37,7 +37,7 @@ export const useUser = () => {
     const handleLoginUser = ({ email, password }) => {
 
         const userDB = users.find(u => u.email.toLowerCase() == email.toLowerCase() &&
-            u.password == password)
+            u.password == password);
 
         if (userDB) {
             setLocalUser(userDB);

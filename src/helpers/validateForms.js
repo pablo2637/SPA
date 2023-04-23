@@ -5,7 +5,7 @@ export const validateFormLogin = (data, setValidate, users) => {
 
     const testEmail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
-    const loginOK = users.find(u => u.email.toLowerCase() == data.email.toLowerCase() && u.password == data.password)
+    const loginOK = users.find(u => u.email.toLowerCase() == data.email.toLowerCase() && u.password == data.password);
 
     if (data.email == '' || !testEmail.test(data.email)) {
         email = 'Debes escribir un email válido';
@@ -76,11 +76,11 @@ export const validateFormFind = (data, setValidate) => {
     let findText, rslt = true;
 
     if (data.findText == '') {
-        rslt = false
-        findText = 'Si no escribes nada, no buscamos nada...'
+        rslt = false;
+        findText = 'Si no escribes nada, no buscamos nada...';
     }
 
-    setValidate({ findText })
+    setValidate({ findText });
 
     return rslt;
 };

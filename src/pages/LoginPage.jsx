@@ -1,4 +1,4 @@
-import { useForm } from "../hooks/useForm"
+import { useForm } from "../hooks/useForm";
 
 export const LoginPage = ({ handleLoginUser, users }) => {
 
@@ -44,5 +44,6 @@ export const LoginPage = ({ handleLoginUser, users }) => {
       </form>
 
     </section >
-  )
-}
+    
+  );
+};

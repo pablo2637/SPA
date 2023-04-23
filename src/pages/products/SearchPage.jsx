@@ -1,13 +1,13 @@
-import { Find } from "./components/Find"
+import { Find } from "./components/Find";
 import { useState } from "react";
-import { fetchDataSearch } from '../../helpers/fetchData'
+import { fetchDataSearch } from '../../helpers/fetchData';
 import { Card } from "./components/Card";
 
 export const SearchPage = () => {
 
   const [products, setProducts] = useState([]);
 
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState('');
 
   const getText = async (findText) => {
 
@@ -69,6 +69,6 @@ export const SearchPage = () => {
       </section>
 
     </>
-  )
+  );
 
 };

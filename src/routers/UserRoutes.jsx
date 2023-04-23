@@ -1,5 +1,5 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
-import { DetailPage, LogoutPage, SearchPage, ProductPages } from '../pages/products'
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { DetailPage, LogoutPage, SearchPage, ProductPages } from '../pages/products';
 import { useContext } from 'react';
 import { UseContextCats } from '../contexts/UseContextCats';
 

@@ -16,11 +16,13 @@ export const DetailPage = () => {
 
         const data = await fetchDataByID(id.id);
         setProduct(data);
-    }
+    };
 
 
     useEffect(() => {
+
         getProduct();
+
     }, []);
 
 

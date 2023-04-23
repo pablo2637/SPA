@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { NavBar } from './components/NavBar'
+import { NavBar } from './components/NavBar';
 import { UserContext } from './contexts/UseContext';
-import { AppRoutes, UserRoutes } from './routers'
+import { AppRoutes, UserRoutes } from './routers';
 import { useUser } from './hooks/useUser';
 import { UseProviderCats } from './contexts/UseProviderCats';
 

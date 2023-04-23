@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 
 export const Card = ({ id, title, src, price, alt, discount }) => {
@@ -25,5 +25,5 @@ export const Card = ({ id, title, src, price, alt, discount }) => {
             </div>
 
         </article >
-    )
-}
+    );
+};

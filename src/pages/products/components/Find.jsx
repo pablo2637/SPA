@@ -1,4 +1,4 @@
-import { useForm } from '../../../hooks/useForm'
+import { useForm } from '../../../hooks/useForm';
 
 export const Find = ({ getText }) => {
 
@@ -37,5 +37,5 @@ export const Find = ({ getText }) => {
             </form>
 
         </section>
-    )
-}
+    );
+};

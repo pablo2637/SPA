@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import { UseContextCats } from "./UseContextCats";
 
 export const UseProviderCats = ({ children }) => {
@@ -11,5 +11,5 @@ export const UseProviderCats = ({ children }) => {
             {children}
 
         </UseContextCats.Provider>
-    )
-}
+    );
+};

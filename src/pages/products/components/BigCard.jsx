@@ -22,5 +22,5 @@ export const BigCard = ({ description, rating, title, src, price, alt, discount 
             </div>
 
         </article>
-    )
-}
+    );
+};

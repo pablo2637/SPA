@@ -34,7 +34,7 @@ export const dummyJson = async (data) => {
         if (request.ok) {
             const response = await request.json();
 
-            return response
+            return response;
 
         } else {
 
@@ -49,4 +49,4 @@ export const dummyJson = async (data) => {
 
     };
 
-}
+};

@@ -1,8 +1,7 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { HomePage, LoginPage, RegisterPage } from '../pages';
 
 export const AppRoutes = ({ handleLoginUser, handleNewUser, users }) => {
-
 
     return (
 
@@ -30,5 +29,5 @@ export const AppRoutes = ({ handleLoginUser, handleNewUser, users }) => {
 
         </Routes>
 
-    )
-}
+    );
+};

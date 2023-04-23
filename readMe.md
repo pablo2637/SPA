@@ -2,8 +2,9 @@
 
 ---
 ## Inicio
-Hay 2 alternativas para probar el proyecto:
-* Acceder al siguiente [enlace](https://productos-spa.netlify.app/) de **Netlify**...
+Hay 3 alternativas para probar el proyecto:
+* Acceder al siguiente [enlace](https://productos-spa.netlify.app/) de **Netlify**, donde está desplegado...
+* Abrir una terminal en la carpeta del proyecto y ejecutar el comando *yarn build*, luego abrir en el navegador el archivo ***index.html*** de la carpeta ***dist***.
 * Iniciar el proyecto desde la terminal del ordenador, ejecutando los siguientes pasos:  
   1. Clonar el proyecto copiando el siguiente [enlace](https://github.com/pablo2637/SPA.git).
   2. Abrir una terminal en la carpeta donde se ha clonado.
@@ -27,3 +28,4 @@ Hay 2 alternativas para probar el proyecto:
 *  Una vez dentro, por defecto, se muestra la **primera categoría** de la lista y se hace un *fetch* para obtener los artículos que contiene.
 *  Los productos se muestran en *Cards*, con la posibilidad de ver más información pulsando el botón '**Más Info**'.
 *  Hay posibilidad de realizar una búsqueda que se realiza sobre **todas** las categorías, los resultados devueltos se muestran también en **Cards**.
+*  La maquetación de la app esta hecha con ***sass***, y es MFR (*Mobile First Responsive*).
