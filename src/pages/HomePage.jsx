@@ -9,7 +9,7 @@ export const HomePage = () => {
 
       <div>
 
-        <img src='src/assets/SPA-small.png' alt="Imagen de Portada" />
+        <img src='../../assets/SPA-small.png' alt="Imagen de Portada" />
 
         <div>
           <h1>
