@@ -1,0 +1,53 @@
+@import '../base/settings';
+
+.secPortada {
+
+    min-height: 70vh;
+    @include flexbox(center, row);
+
+    div {
+        @include container-img-texto($bg-font-col, center, 100, 0);
+
+        h1 {
+            text-shadow: 0 0 15px $bg;
+
+            .titulo {
+                font-size: pixels-rem(55);
+                text-decoration: none;
+                color: $bg-font-col;
+            }
+
+            .titulo:hover {
+                color: $font-col;
+            }
+        }
+    }
+
+}
+
+
+@media screen and ($bp-mobile-plus) {
+
+    .secPortada {
+        div {
+            h1 {
+                .titulo {
+                    font-size: pixels-rem(65);
+                }
+            }
+        }
+    }
+}
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secPortada {
+        div {
+            h1 {
+                .titulo {
+                    font-size: pixels-rem(75);
+                }
+            }
+        }
+    }
+}

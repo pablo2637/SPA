@@ -5,7 +5,7 @@ import { deleteLocalUser } from "../../helpers/localStorage";
 
 export const LogoutPage = () => {
 
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const logout = () => {
     setUser({});

@@ -3,38 +3,45 @@ import { NavBar } from './components/NavBar'
 import { UserContext } from './contexts/UseContext';
 import { AppRoutes, UserRoutes } from './routers'
 import { useUser } from './hooks/useUser';
+import { UseProviderCats } from './contexts/UseProviderCats';
 
 function App() {
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const { handleLoginUser, handleNewUser, users } = useUser();
 
   return (
+
     <>
       <header>
-        Práctica SPA
+        <p>Práctica SPA</p>
       </header>
 
-      <NavBar />
+      <UseProviderCats>
 
-      <main>
+        <NavBar />
 
-        {(user.id) ?
-          <UserRoutes />
-          :
-          <AppRoutes
-            handleNewUser={handleNewUser}
-            handleLoginUser={handleLoginUser}
-            users={users}
-          />}
+        <main>
 
-      </main>
+          {(user.id) ?
+            <UserRoutes />
+            :
+            <AppRoutes
+              handleNewUser={handleNewUser}
+              handleLoginUser={handleLoginUser}
+              users={users}
+            />}
+
+        </main>
+
+      </UseProviderCats>
 
       <footer>
-        Footer
+        <p>Footer</p>
       </footer>
     </>
+
   )
 }
 
