@@ -1,3 +1,5 @@
+@import './base/settings';
+
 * {
     margin: 0;
     padding: 0;
@@ -5,5 +7,20 @@
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+    font-size: pixels-rem(13);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    min-width: 360px;
+}
+
+
+@media screen and ($bp-mobile-landscape) {
+    body {
+        font-size: pixels-rem(14);
+    }
+}
+
+@media screen and ($bp-tablet-landscape) {
+    body {
+        font-size: pixels-rem(16);
+    }
 }

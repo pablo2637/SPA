@@ -4,7 +4,7 @@ main {
     @include flexbox(start, column);
     @include container(95%, 0);
     max-width: 992px;
-    min-height: 80vh;
+    min-height: 75vh;
 
     h2 {
         margin-top: pixels-rem(30);

@@ -7,7 +7,6 @@
         width: pixels-rem(100);
         padding: pixels-rem(5);
         transition: background-color 250ms ease-in-out;
-
     }
 
     button:hover {
@@ -17,7 +16,7 @@
 
     article {
 
-        @include grid(0.4fr 0.6fr, space-evenly, start, 10, 20);
+        @include grid(1fr, space-evenly, start, 0, 0);
         @include container(95%, pixels-rem(20));
 
         div:first-of-type {
@@ -29,7 +28,6 @@
             img {
                 @include imagen();
                 padding: pixels-rem(2);
-                
                 transition: transform 1s ease-in-out;
             }
 
@@ -52,7 +50,6 @@
                 span {
                     font-weight: bold;
                 }
-
             }
 
             p:first-of-type {
@@ -65,9 +62,28 @@
                     color: $error;
                 }
             }
-
         }
-
     }
+}
 
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secDetail {
+        article {            
+            @include grid(1fr 1fr, space-evenly, start, 10, 5);
+            width: 100%;
+            max-width: pixels-rem(600);            
+        }
+    }
+}
+
+@media screen and ($bp-tablet) {
+
+    .secDetail {
+        article {                        
+            @include grid(0.6fr 0.4fr, space-evenly, start, 10, 15);
+            max-width: pixels-rem(820);            
+        }
+    }
 }

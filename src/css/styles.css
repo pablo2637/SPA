@@ -1,3 +1,17 @@
+.ocultar {
+  display: none;
+}
+
+.mostrar {
+  display: inherit;
+}
+
+.isActive {
+  color: red;
+  border: 1px solid red;
+  border-radius: 0.3125rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +19,21 @@
 }
 
 body {
+  font-size: 0.8125rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  min-width: 360px;
 }
 
+@media screen and (min-width:640px) {
+  body {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width:992px) {
+  body {
+    font-size: 1rem;
+  }
+}
 .ocultar {
   display: none;
 }
@@ -62,7 +88,7 @@ nav .divNavContainer div:nth-child(2) {
 }
 nav .divNavContainerUser {
   display: grid;
-  grid-template-columns: 0.7fr 0.3fr;
+  grid-template-columns: 0.65fr 0.35fr;
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
@@ -72,15 +98,21 @@ nav .divNavContainerUser select {
   border: 1px solid rgb(142, 143, 144);
   border-radius: 0.3125rem;
   cursor: pointer;
-  width: 12.5rem;
-  font-size: 0.9375rem;
-  padding: 0.625rem;
-  text-indent: 0.3125rem;
+  width: 5.625rem;
+  font-size: 0.625rem;
+  padding: 0.3125rem;
+  text-indent: 0.1875rem;
   color: rgb(142, 143, 144);
-  margin-right: 0.625rem;
+  margin-right: 0.3125rem;
 }
 nav .divNavContainerUser select:hover {
   color: rgb(32, 37, 41);
+}
+nav .divNavContainerUser div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
 }
 nav .divNavContainerUser div:nth-child(2) {
   justify-self: right;
@@ -91,12 +123,12 @@ nav .divNavContainerUser div:nth-child(2) a {
   box-shadow: 0 0 2px rgb(32, 37, 41);
 }
 nav .divNavContainerUser div:nth-child(2) p {
-  font-size: 0.9375rem;
+  font-size: 0.6875rem;
 }
 nav p {
-  font-size: 1.5625rem;
+  font-size: 0.875rem;
   padding: 0.125rem;
-  margin-right: 0.625rem;
+  margin-right: 0.3125rem;
   display: inline-block;
 }
 nav a {
@@ -104,13 +136,78 @@ nav a {
   text-decoration: none;
   color: rgb(142, 143, 144);
   border-radius: 0.625rem;
-  padding: 0.625rem;
+  padding: 0.3125rem;
   transition: background-color 250ms ease-in-out;
 }
 nav a:hover {
   background-color: rgb(32, 37, 41);
 }
 
+@media screen and (min-width:430px) {
+  nav .divNavContainerUser select {
+    width: 6.875rem;
+  }
+}
+@media screen and (min-width:430px) {
+  nav .divNavContainerUser {
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0rem;
+  }
+  nav .divNavContainerUser div:nth-child(2) p {
+    font-size: 0.75rem;
+  }
+  nav p {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width:640px) {
+  nav .divNavContainerUser {
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0rem;
+  }
+  nav .divNavContainerUser select {
+    width: 9.375rem;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    text-indent: 0.3125rem;
+    margin-right: 0.625rem;
+  }
+  nav .divNavContainerUser div:nth-child(2) p {
+    font-size: 0.9375rem;
+  }
+  nav p {
+    font-size: 1.4375rem;
+    padding: 0.5rem;
+  }
+  nav a {
+    padding: 0.5rem;
+  }
+}
+@media screen and (min-width:992px) {
+  nav .divNavContainerUser select {
+    width: 12.5rem;
+    font-size: 0.9375rem;
+    padding: 0.625rem;
+  }
+  nav .divNavContainerUser div:nth-child(2) p {
+    font-size: 0.9375rem;
+  }
+  nav p {
+    font-size: 1.875rem;
+    padding: 0.625rem;
+  }
+  nav a {
+    padding: 0.625rem;
+  }
+}
 .ocultar {
   display: none;
 }
@@ -138,7 +235,7 @@ nav a:hover {
 .secPortada div img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .secPortada div div {
   width: 100%;
@@ -157,7 +254,25 @@ nav a:hover {
 .secPortada div h1 {
   text-shadow: 0 0 15px rgb(32, 37, 41);
 }
+.secPortada div h1 .titulo {
+  font-size: 3.4375rem;
+  text-decoration: none;
+  color: rgb(255, 253, 249);
+}
+.secPortada div h1 .titulo:hover {
+  color: rgb(21, 41, 60);
+}
 
+@media screen and (min-width:430px) {
+  .secPortada div h1 .titulo {
+    font-size: 4.0625rem;
+  }
+}
+@media screen and (min-width:640px) {
+  .secPortada div h1 .titulo {
+    font-size: 4.6875rem;
+  }
+}
 .ocultar {
   display: none;
 }
@@ -185,12 +300,12 @@ nav a:hover {
 .secLogin form,
 .secRegister form {
   display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-columns: 0.35fr 0.65fr;
   justify-content: center;
   align-items: center;
-  padding: 1.25rem;
-  gap: 0.625rem;
-  width: 25rem;
+  padding: 0.625rem;
+  gap: 0.3125rem;
+  width: 21.875rem;
 }
 .secLogin form label,
 .secRegister form label {
@@ -198,11 +313,11 @@ nav a:hover {
 }
 .secLogin form p,
 .secRegister form p {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: red;
   grid-column: 1/3;
   text-align: center;
-  margin-bottom: 0.1875rem;
+  margin-bottom: 0.3125rem;
 }
 .secLogin form input:not([type=submit]),
 .secRegister form input:not([type=submit]) {
@@ -234,6 +349,25 @@ nav a:hover {
   box-shadow: 0 0 1px rgb(32, 37, 41);
 }
 
+@media screen and (min-width:640px) {
+  .secLogin form {
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9375rem;
+    gap: 0.625rem;
+    width: 25rem;
+  }
+}
+@media screen and (min-width:992px) {
+  .secLogin form {
+    width: 28.125rem;
+  }
+  .secLogin form p {
+    font-size: 0.8125rem;
+  }
+}
 .ocultar {
   display: none;
 }
@@ -253,21 +387,53 @@ nav a:hover {
   grid-template-columns: 0.45fr 0.55fr;
   justify-content: center;
   align-items: center;
-  padding: 1.25rem;
-  gap: 0.625rem;
-  width: 31.25rem;
+  padding: 0.625rem;
+  gap: 0.3125rem;
+  width: 21.875rem;
 }
 
+@media screen and (min-width:430px) {
+  .secRegister form {
+    width: 25rem;
+  }
+}
+@media screen and (min-width:640px) {
+  .secRegister form {
+    display: grid;
+    grid-template-columns: 0.45fr 0.55fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9375rem;
+    gap: 0.625rem;
+    width: 27.5rem;
+  }
+}
+@media screen and (min-width:992px) {
+  .secRegister form {
+    width: 31.25rem;
+  }
+  .secRegister form p {
+    font-size: 0.8125rem;
+  }
+}
 .secProducts {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: space-evenly;
+  grid-template-columns: 1fr;
+  justify-content: center;
   align-items: start;
   padding: 0.625rem;
-  gap: 0.9375rem;
-  margin: 1.25rem auto;
+  gap: 0.3125rem;
+  margin: 0.625rem auto;
+  width: 100%;
+  max-width: 23.75rem;
 }
 .secProducts article {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  gap: 0rem;
   width: 100%;
   height: 100%;
   border: 1px solid rgb(142, 143, 144);
@@ -280,14 +446,14 @@ nav a:hover {
 }
 .secProducts article div:first-of-type {
   width: 100%;
-  height: 12.5rem;
+  height: 15.625rem;
   margin-bottom: 0.625rem;
   overflow: hidden;
 }
 .secProducts article div:first-of-type img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   padding: 0.125rem;
   transition: transform 500ms ease-in-out;
 }
@@ -327,7 +493,42 @@ nav a:hover {
 .secProducts article:hover {
   box-shadow: 0 0 10px 2px rgb(32, 37, 41);
 }
+@media screen and (min-width:430px) {
+  .secProducts article h3 {
+    font-size: 0.8125rem;
+  }
+  .secProducts article div:first-of-type {
+    height: 17.5rem;
+  }
+}
 
+@media screen and (min-width:430px) {
+  .secProducts {
+    max-width: 25.625rem;
+  }
+}
+@media screen and (min-width:640px) {
+  .secProducts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    align-items: start;
+    padding: 0.9375rem;
+    gap: 0.9375rem;
+    max-width: 45rem;
+  }
+}
+@media screen and (min-width:992px) {
+  .secProducts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    align-items: start;
+    padding: 1.25rem;
+    gap: 1.25rem;
+    max-width: 59.375rem;
+  }
+}
 .secDetail {
   width: 90%;
   margin: 1.875rem auto;
@@ -349,11 +550,11 @@ nav a:hover {
 }
 .secDetail article {
   display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-columns: 1fr;
   justify-content: space-evenly;
   align-items: start;
-  padding: 0.625rem;
-  gap: 1.25rem;
+  padding: 0rem;
+  gap: 0rem;
   width: 95%;
   margin: 1.25rem auto;
 }
@@ -366,7 +567,7 @@ nav a:hover {
 .secDetail article div:first-of-type img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   padding: 0.125rem;
   transition: transform 1s ease-in-out;
 }
@@ -392,17 +593,43 @@ nav a:hover {
   color: red;
 }
 
+@media screen and (min-width:640px) {
+  .secDetail article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 0.625rem;
+    gap: 0.3125rem;
+    width: 100%;
+    max-width: 37.5rem;
+  }
+}
+@media screen and (min-width:768px) {
+  .secDetail article {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 0.625rem;
+    gap: 0.9375rem;
+    max-width: 51.25rem;
+  }
+}
 .secSearch {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: start;
   padding: 1.25rem;
   gap: 1.25rem;
   margin: 1.25rem auto;
+  max-width: 31.25rem;
 }
 .secSearch section:first-child form label {
-  color: rgb(21, 41, 60);
+  display: inline-block;
+  color: rgb(142, 143, 144);
+  margin-bottom: 0.25rem;
 }
 .secSearch section:first-child form input:first-of-type {
   border: 1px solid rgb(100, 135, 128);
@@ -448,48 +675,54 @@ nav a:hover {
 .secSearch section:last-child div div:first-child p:first-child {
   color: rgb(100, 135, 128);
 }
-.secSearch section:last-child div article {
+.secSearch section:last-child div div:last-child article {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  gap: 0rem;
   width: 100%;
   height: 100%;
   border: 1px solid rgb(142, 143, 144);
   box-shadow: 0 0 3px rgb(32, 37, 41);
 }
-.secSearch section:last-child div article h3 {
+.secSearch section:last-child div div:last-child article h3 {
   font-size: 0.75rem;
   text-align: center;
   margin: 0.625rem 0;
 }
-.secSearch section:last-child div article div:first-of-type {
+.secSearch section:last-child div div:last-child article div:first-of-type {
   width: 100%;
-  height: 12.5rem;
+  height: 15.625rem;
   margin-bottom: 0.625rem;
   overflow: hidden;
 }
-.secSearch section:last-child div article div:first-of-type img {
+.secSearch section:last-child div div:last-child article div:first-of-type img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   padding: 0.125rem;
   transition: transform 500ms ease-in-out;
 }
-.secSearch section:last-child div article div:first-of-type img:hover {
+.secSearch section:last-child div div:last-child article div:first-of-type img:hover {
   transform: scale(1.3);
 }
-.secSearch section:last-child div article p {
+.secSearch section:last-child div div:last-child article p {
   padding: 0.125rem 0.625rem;
   font-size: 0.75rem;
 }
-.secSearch section:last-child div article p span {
+.secSearch section:last-child div div:last-child article p span {
   font-weight: bold;
 }
-.secSearch section:last-child div article p:last-of-type span {
+.secSearch section:last-child div div:last-child article p:last-of-type span {
   color: red;
 }
-.secSearch section:last-child div article div:last-of-type {
+.secSearch section:last-child div div:last-child article div:last-of-type {
   text-align: center;
   margin-bottom: 0.3125rem;
 }
-.secSearch section:last-child div article div:last-of-type button {
+.secSearch section:last-child div div:last-child article div:last-of-type button {
   background-color: rgb(32, 37, 41);
   border-radius: 5px;
   border: none;
@@ -500,19 +733,63 @@ nav a:hover {
   padding: 0.5rem;
   transition: background-color 250ms ease-in-out;
 }
-.secSearch section:last-child div article div:last-of-type button:hover {
+.secSearch section:last-child div div:last-child article div:last-of-type button:hover {
   background-color: rgb(255, 253, 249);
   color: rgb(32, 37, 41);
   box-shadow: 0 0 1px rgb(32, 37, 41);
 }
-.secSearch section:last-child div article:hover {
+.secSearch section:last-child div div:last-child article:hover {
   box-shadow: 0 0 10px 2px rgb(32, 37, 41);
 }
-.secSearch section:last-child div article {
+@media screen and (min-width:430px) {
+  .secSearch section:last-child div div:last-child article h3 {
+    font-size: 0.8125rem;
+  }
+  .secSearch section:last-child div div:last-child article div:first-of-type {
+    height: 17.5rem;
+  }
+}
+.secSearch section:last-child div div:last-child article {
   width: 90%;
   margin: 0.625rem auto;
 }
 
+@media screen and (min-width:640px) {
+  .secSearch {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    justify-content: center;
+    align-items: start;
+    padding: 1.25rem;
+    gap: 1.25rem;
+    margin: 1.25rem auto;
+    max-width: 46.875rem;
+  }
+}
+@media screen and (min-width:992px) {
+  .secSearch {
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    justify-content: center;
+    align-items: start;
+    padding: 1.25rem;
+    gap: 1.25rem;
+    margin: 1.25rem auto;
+    max-width: 100%;
+  }
+  .secSearch section:last-child h3 {
+    color: rgb(21, 41, 60);
+    margin-bottom: 0.3125rem;
+  }
+  .secSearch section:last-child div div:last-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: start;
+    padding: 0.3125rem;
+    gap: 0.3125rem;
+  }
+}
 .ocultar {
   display: none;
 }
@@ -535,7 +812,7 @@ main {
   width: 95%;
   margin: 0 auto;
   max-width: 992px;
-  min-height: 80vh;
+  min-height: 75vh;
 }
 main h2 {
   margin-top: 1.875rem;

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { fetchCategories } from '../helpers/fetchData'
+import { fetchCategories } from '../helpers/fetchData';
 import { useNavigate } from 'react-router-dom';
 import { UseContextCats } from '../contexts/UseContextCats';
 import { UserContext } from "../contexts/UseContext";
@@ -15,18 +15,19 @@ export const Categories = () => {
     const getCategories = async () => {
 
         const data = await fetchCategories();
-
         setCats(data);
-    }
+    };
 
 
     const handlerChange = ({ target }) => {
+
         navigate(`products/${target.value}`);
-    }
+    };
 
 
     useEffect(() => {
         if (cats.length == 0) getCategories();
+
     }, []);
 
     return (
@@ -50,6 +51,5 @@ export const Categories = () => {
 
             }
         </>
-    )
-
-}
+    );
+};

@@ -10,8 +10,8 @@
 
     form {
 
-        @include grid(0.4fr 0.6fr, center, center, 20, 10);
-        width: pixels-rem(400);
+        @include grid(0.35fr 0.65fr, center, center, 10, 5);
+        width: pixels-rem(350);
 
 
         label {
@@ -19,11 +19,11 @@
         }
 
         p {
-            font-size: pixels-rem(12);
+            font-size: pixels-rem(11);
             color: $error;
             grid-column: 1 / 3;
             text-align: center;
-            margin-bottom: pixels-rem(3);
+            margin-bottom: pixels-rem(5);
         }
 
         input:not([type='submit']) {
@@ -32,7 +32,7 @@
         }
 
         input:not([type='submit']):hover {
-            background-color: $input-bg;            
+            background-color: $input-bg;
             border-color: $bg;
         }
 
@@ -51,4 +51,27 @@
 
     }
 
+}
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secLogin {
+        form {
+            @include grid(0.35fr 0.65fr, center, center, 15, 10);
+            width: pixels-rem(400);
+        }
+    }
+}
+
+@media screen and ($bp-tablet-landscape) {
+
+    .secLogin {
+        form {
+            width: pixels-rem(450);
+
+            p {
+                font-size: pixels-rem(13);
+            }
+        }
+    }
 }

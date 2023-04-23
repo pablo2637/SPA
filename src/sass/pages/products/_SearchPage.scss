@@ -1,13 +1,19 @@
+@import './components/_Card';
+
 .secSearch {
 
-    @include grid(1fr 1fr, center, start, 20, 20);
+    @include grid(1fr, center, start, 20, 20);
     margin: pixels-rem(20) auto;
+    max-width: pixels-rem(500);
 
     section:first-child {
 
         form {
+
             label {
-                color: $font-col;
+                display: inline-block;
+                color: $nav-font-col;
+                margin-bottom: pixels-rem(4);
             }
 
             input:first-of-type {
@@ -17,7 +23,7 @@
             }
 
             input:first-of-type:hover {
-                background-color: $input-bg;            
+                background-color: $input-bg;
                 border-color: $bg;
             }
 
@@ -27,7 +33,6 @@
                 padding: pixels-rem(5);
                 width: pixels-rem(120);
                 transition: background-color 250ms ease-in-out;
-
             }
 
             input[type='submit']:hover {
@@ -61,13 +66,49 @@
                 }
             }
 
-            @include cards();
+            div:last-child {
+                @include card();
 
-            article {
-                @include container(90%, pixels-rem(10));
+                article {
+                    @include container(90%, pixels-rem(10));
+                }
+            }
+
+
+        }
+    }
+}
+
+
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secSearch {
+        @include grid(0.4fr 0.6fr, center, start, 20, 20);
+        margin: pixels-rem(20) auto;
+        max-width: pixels-rem(750);
+    }
+}
+
+@media screen and ($bp-tablet-landscape) {
+
+    .secSearch {
+        @include grid(0.3fr 0.7fr, center, start, 20, 20);
+        margin: pixels-rem(20) auto;
+        max-width: 100%;
+
+        section:last-child {
+
+            h3 {
+                color: $font-col;
+                margin-bottom: pixels-rem(5);
+            }
+
+            div {
+                div:last-child {
+                    @include grid(1fr 1fr, center, start, 5, 5);
+                }
             }
         }
-
     }
-
 }

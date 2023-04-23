@@ -42,9 +42,11 @@ export const SearchPage = () => {
                 }
               </div>
 
-              {products.map(product =>
-                <Card key={product.id} {...product} />
-              )}
+              <div>
+                {products.map(product =>
+                  <Card key={product.id} {...product} />
+                )}
+              </div>
             </div>
 
             :

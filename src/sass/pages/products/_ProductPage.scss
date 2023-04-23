@@ -1,7 +1,35 @@
+@import './components/_Card';
+
 .secProducts {
 
-    @include grid(1fr 1fr 1fr, space-evenly, start, 10, 15);
-    margin: pixels-rem(20) auto;
+    @include grid(1fr, center, start, 10, 5);
+    margin: pixels-rem(10) auto;
+    width: 100%;
+    max-width: pixels-rem(380);
 
-    @include cards();
+    @include card();
+}
+
+
+@media screen and ($bp-mobile-plus) {
+
+    .secProducts {
+        max-width: pixels-rem(410);
+    }
+}
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secProducts {
+        @include grid(1fr 1fr, space-around, start, 15, 15);
+        max-width: pixels-rem(720);
+    }
+}
+
+@media screen and ($bp-tablet-landscape) {
+
+    .secProducts {
+        @include grid(1fr 1fr 1fr, space-around, start, 20, 20);
+        max-width: pixels-rem(950);
+    }
 }

@@ -4,9 +4,44 @@
 
     form {
 
-        @include grid(0.45fr 0.55fr, center, center, 20, 10);
-        width: pixels-rem(500);
+        @include grid(0.45fr 0.55fr, center, center, 10, 5);
+        width: pixels-rem(350);
+    }
+}
 
+
+@media screen and ($bp-mobile-plus) {
+
+    .secRegister {
+
+        form {
+            width: pixels-rem(400);
+        }
     }
 
+}
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secRegister {
+
+        form {
+            @include grid(0.45fr 0.55fr, center, center, 15, 10);
+            width: pixels-rem(440);
+        }
+    }
+}
+
+@media screen and ($bp-tablet-landscape) {
+
+    .secRegister {
+
+        form {
+            width: pixels-rem(500);
+
+            p {
+                font-size: pixels-rem(13);
+            }
+        }
+    }
 }
