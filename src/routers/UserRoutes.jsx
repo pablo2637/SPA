@@ -17,7 +17,7 @@ export const UserRoutes = () => {
             <Route path='search' element={<SearchPage />} />
             <Route path='logout' element={<LogoutPage />} />
 
-            <Route path='/*' element={<Navigate to={`/products/${cats[0]}`} />} />
+            <Route path='/*' element={<Navigate to={`products/${cats[0]}`} />} />
 
         </Routes>
 

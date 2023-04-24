@@ -3,13 +3,10 @@ import { fetchDataCategory } from '../../helpers/fetchData';
 import { Card } from "./components/Card";
 import { useParams } from 'react-router-dom';
 
-
 export const ProductPages = () => {
 
-
-    const [products, setProducts] = useState([]);
     const { category } = useParams();
-    const [last, setLast] = useState('');
+    const [products, setProducts] = useState([]);
 
 
     const getProducts = async () => {
@@ -17,15 +14,14 @@ export const ProductPages = () => {
         let data = await fetchDataCategory(category);
 
         setProducts(data);
-        setLast(category);
     };
 
 
     useEffect(() => {
-        
-        if (last != category) getProducts();
 
-    });
+        getProducts();
+
+    }, [category]);
 
 
     return (
